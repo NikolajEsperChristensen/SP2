@@ -2,25 +2,44 @@ public abstract class Title {
     private String title;
     private String literatureType;
     protected double rate(){
-        return 0;
+        return 0.067574;
     }
 
 
-    public Title(String literatureType, String title) {
-        this.literatureType = literatureType;
+    public Title(String title, String literatureType) {
         this.title = title;
+        this.literatureType = literatureType;
     }
 
     public double calculateRoyalty(){
-        return 0;
-
+        return calculatePoints() * rate();
     }
     protected abstract double calculatePoints();
 
-    protected double convertLiteratureType(){
-        return 0;
+    protected double convertLiteratureType() {
+        switch (literatureType.toUpperCase()) {
+            case "BI":
+                return 3;
 
+            case "TE":
+                return 3;
+
+            case "LYRIK":
+                return 6;
+
+            case "SKØN":
+                return 1.7;
+
+            case "FAG":
+                return 1;
+
+            default:
+                System.out.println("ikke en type");
+        }
+        return 0;
     }
+
+
 
 
 

@@ -6,8 +6,11 @@ public class PrintedBook extends PhysicalTitle {
 
     }
 
+
     @Override
-    protected double convertLiteratureType() {
-        return super.convertLiteratureType();
+    protected double calculatePoints() {
+        double points = 0;
+        points = pages * convertLiteratureType() * copies;
+        return points;
     }
 }

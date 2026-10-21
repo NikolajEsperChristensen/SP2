@@ -8,7 +8,9 @@ public class AudioBook extends PhysicalTitle implements IAudioBook {
 
     @Override
     protected double calculatePoints() {
-        return super.calculatePoints();
+        double points = 0;
+        points = (getDurationInMinutes()*0.5) * convertLiteratureType() * copies;
+        return points;
     }
 
     @Override
