@@ -12,7 +12,15 @@ public class LibraryRoyaltyCalculator {
         Jim.addTitle(bimcook);
 
 
-        Jim.calculateRoyalties();
+        //Jim.calculateRoyalties();
+
+
+
+        Title lydbog = new EBook("mincook", "FAG", 97, 50, 205, 360000, false);
+
+
+        System.out.println(lydbog.calculatePoints());
+        System.out.println(lydbog.calculateRoyalty());
 
 
 
